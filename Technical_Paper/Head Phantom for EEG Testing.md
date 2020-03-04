@@ -147,51 +147,54 @@ Since the goal of this EEG head phantom is to play back EEG-like signals in plac
 ### 5.1	Collecting Human EEG Recordings
 The objective of this test was to acquire representative human EEG recordings. Since one purpose of this phantom is to evaluate EEG systems outside of the laboratory, where electromagnetic interference (EMI) is often a concern, we desired to collect human EEG recordings both with and without purposely added EMI.
 
-The protocol for this human subject research was reviewed and approved by the Dartmouth Committee for the Protection of Human Subjects (CPHS) prior to conducting this study. Our signal volunteer test subject was male, approximately 40 years old, with no known neurological conditions.
+[<img src="images/2015-01-30EEGRecordingFromHuman.jpg" alt="Recording EEG" width="400"](images/2015-01-30EEGRecordingFromHuman.jpg)
+*Figure 10.  Our human subject volunteered to include this photo in the report.  The coil of wire in the background was used to purposely generate electromagnetic interence, though those recordings are not discussed here.*
 
-We acquired the EEG recordings using a research-grade EEG recording system (32 channel ASA-Lab from ANT North America Inc.). The EEG cap from ANT utilized wet, passive Ag/AgCl electrodes with shielded lead wires. The EEG montage (red circles, Figure 11) included the 10‒20 locations and some of the 10‒10 locations. During recording, the EEG system was configured to utilize location Fpz as its EEG ground. Being a closed proprietary system, it is unclear what “ground” means electrically for the ANT EEG electronics. The EEG system was configured to collect data at a sampling rate of 512 Hz. 
+The protocol for this human subject research was reviewed and approved by the Dartmouth Committee for the Protection of Human Subjects (CPHS) prior to conducting this study. Our signal volunteer test subject (Figure 10) was male with no known neurological conditions.
+
+We acquired the EEG recordings using a research-grade EEG recording system (32 channel ASA-Lab from ANT North America Inc.). The EEG cap from ANT utilized wet, passive Ag/AgCl electrodes with shielded lead wires. The EEG montage (red circles, Figure 12) included the 10‒20 locations and some of the 10‒10 locations. During recording, the EEG system was configured to utilize location Fpz as its EEG ground. Being a closed proprietary system, it is unclear what “ground” means electrically for the ANT EEG electronics. The EEG system was configured to collect data at a sampling rate of 512 Hz. 
  
 [<img src="images/EEGMontage.png" alt="EEG Montage" width="300">](images/EEGMontage.png)
  
-*Figure 11. The Red Circles Mark the Electrode Locations for Human and Phantom Testing with the ANT EEG. M1 and M2 are mastoid locations, in lieu of A1 and A2 on the earlobes.*
+*Figure 12. The Red Circles Mark the Electrode Locations for Human and Phantom Testing with the ANT EEG. M1 and M2 are mastoid locations, in lieu of A1 and A2 on the earlobes.*
 
-For our data collection, the subject was seated and relaxed. We recorded continuous EEG with alternating periods with the subject’s eyes open and the subject’s eyes closed. Spectrograms of the EEG data from this test are shown in Figure 12. The elevated power near 10 Hz appears to be elevated alpha rhythm power occurring during periods when the subject’s eyes were closed. Figure 13 shows the spatial distribution of measured EEG amplitude (and polarity) in the 7 to 15 Hz band for the eyes open (left) and eyes-closed (right) periods. It shows that the strength of the eyes closed alpha rhythm was highest in the occipital region, as expected.
+For our data collection, the subject was seated and relaxed. We recorded continuous EEG with alternating periods with the subject’s eyes open and the subject’s eyes closed. Spectrograms of the EEG data from this test are shown in Figure 14. The elevated power near 10 Hz appears to be elevated alpha rhythm power occurring during periods when the subject’s eyes were closed. Figure 14 shows the spatial distribution of measured EEG amplitude (and polarity) in the 7 to 15 Hz band for the eyes open (left) and eyes-closed (right) periods. It shows that the strength of the eyes closed alpha rhythm was highest in the occipital region, as expected.
 
 [<img src="images/SpectrogramsOfHumanEEG.png" alt="Spectrograms of Human EEG" width="450">](images/SpectrogramsOfHumanEEG.png)
  
-*Figure 12. Spectrograms of Human EEG Recordings for the F3, C3, and O1 Electrode Positions. Elevated alpha rhythm power is present during eyes-closed periods, with the strongest amplitude in the electrodes at the back of the head (O1, bottom). Color scale spans 40 dB re: 1 uV.*
+*Figure 14. Spectrograms of Human EEG Recordings for the F3, C3, and O1 Electrode Positions. Elevated alpha rhythm power is present during eyes-closed periods, with the strongest amplitude in the electrodes at the back of the head (O1, bottom). Color scale spans 40 dB re: 1 uV.*
   
 [<img src="images/HeadPlots.png" alt="Head Plots" width="500">](images/HeadPlots.png)
   
-*Figure 13. Spatial Distribution of Power in the Alpha Band (7 to 15 Hz) with the Subject’s Eyes Open (left) and Eyes Closed (right). Negative RMS values indicate that the recorded signal from that location was 180 deg out-of-phase with the locations indicated with positive RMS values.*
+*Figure 14. Spatial Distribution of Power in the Alpha Band (7 to 15 Hz) with the Subject’s Eyes Open (left) and Eyes Closed (right). Negative RMS values indicate that the recorded signal from that location was 180 deg out-of-phase with the locations indicated with positive RMS values.*
 
 ### 5.2	Configuring The Phantom
-With these recordings of human EEG, we prepared the phantom to play back the data. Our setup for this demonstration is shown in Figure 14. For the EEG system, we used an 8 channel version of OpenBCI, the open source EEG platform described earlier. We used eight discrete EEG electrodes (Ag/Ag-Cl) and attached them to the phantom with traditional EEG paste (Ten20 brand). We placed the reference electrode at the right ear location and the bias (driven ground) electrode at the left ear location.
+With these recordings of human EEG, we prepared the phantom to play back the data. Our setup for this demonstration is shown in Figure 15. For the EEG system, we used an 8 channel version of OpenBCI, the open source EEG platform described earlier. We used eight discrete EEG electrodes (Ag/Ag-Cl) and attached them to the phantom with traditional EEG paste (Ten20 brand). We placed the reference electrode at the right ear location and the bias (driven ground) electrode at the left ear location.
 
 [<img src="images/SetupForEEGPlaybackToOpenBCI.png" alt="Setup for Playback" width="450">](images/SetupForEEGPlaybackToOpenBCI.png)
  
-*Figure 14. Setup Used for Playing Back Human EEG Data through the Phantom*
+*Figure 15. Setup Used for Playing Back Human EEG Data through the Phantom*
 
-As with our preliminary testing, the first step is to calibrate the phantom for the particular EEG electrode locations being employed. We executed the same calibration procedure as described earlier. Figure 15 shows the phantom’s measured transfer function matrix and the resulting calibration matrix (again, using Moore-Penrose pseudoinverse). We then evaluated the effectiveness of the calibration by generating calibrated synthetic test signals intended to illuminate each EEG sense electrode individually. When playing these signals through the phantom, we obtained the transfer function matrix shown in Figure 16. Ideally, this would exhibit a purely diagonal response. We see that the response is excellent in the front, though more blurred in the back. On average, we achieve about 18 dB of isolation between the target electrodes and the non-target electrodes. 
+As with our preliminary testing, the first step is to calibrate the phantom for the particular EEG electrode locations being employed. We executed the same calibration procedure as described earlier. Figure 16 shows the phantom’s measured transfer function matrix and the resulting calibration matrix (again, using Moore-Penrose pseudoinverse). We then evaluated the effectiveness of the calibration by generating calibrated synthetic test signals intended to illuminate each EEG sense electrode individually. When playing these signals through the phantom, we obtained the transfer function matrix shown in Figure 17. Ideally, this would exhibit a purely diagonal response. We see that the response is excellent in the front, though more blurred in the back. On average, we achieve about 18 dB of isolation between the target electrodes and the non-target electrodes. 
 
 [<img src="images/TransferFunctionUncalibrated.png" alt="Playback Transfer Function, Uncalibrated" width="500">](images/TransferFunctionUncalibrated.png)
  
-*Figure 15. (Top) Transfer Function Matrix Measured from the Scalp Surface Using the 8-Channel OpenBCI EEG System When Individually Driving the Phantom’s Internal Electrodes. The EEG reference electrode was on the phantom’s left ear location. (Bottom) Calibration matrix resulting from computing the pseudoinverse of the transfer function matrix.*
+*Figure 16. (Top) Transfer Function Matrix Measured from the Scalp Surface Using the 8-Channel OpenBCI EEG System When Individually Driving the Phantom’s Internal Electrodes. The EEG reference electrode was on the phantom’s left ear location. (Bottom) Calibration matrix resulting from computing the pseudoinverse of the transfer function matrix.*
  
 [<img src="images/TransferFunctionCalibrated.png" alt="Playback Transfer Function, Calibrated" width="500">](images/TransferFunctionCalibrated.png)
  
-*Figure 16. Transfer Function Matrix Measured When Evaluating the Quality of the Calibration Using Calibrated Test Tones.*
+*Figure 17. Transfer Function Matrix Measured When Evaluating the Quality of the Calibration Using Calibrated Test Tones.*
 
 ### 5.3	Playback Of Human EEG Data
-We prepared the human data for playback by re-montaging the data for a right ear reference (the human data included an electrode at M2, which is very similar to the phantom’s right ear location). We then applied the calibration matrix to obtain the calibrated drive signals and played the drive signals through the phantom while recording the scalp potentials from the EEG system. Looking at Figure 17, we see that the signals recorded by the EEG system are extremely similar to re-montaged signals from the human. An additional comparison of the data is in Figure 18, which shows time-domain traces of a period that includes two eye blinks. As can be seen, the qualitative fidelity of the playback through the phantom is excellent.
+We prepared the human data for playback by re-montaging the data for a right ear reference (the human data included an electrode at M2, which is very similar to the phantom’s right ear location). We then applied the calibration matrix to obtain the calibrated drive signals and played the drive signals through the phantom while recording the scalp potentials from the EEG system. Looking at Figure 18, we see that the signals recorded by the EEG system are extremely similar to re-montaged signals from the human. An additional comparison of the data is in Figure 19, which shows time-domain traces of a period that includes two eye blinks. As can be seen, the qualitative fidelity of the playback through the phantom is excellent.
  
 [<img src="images/ComparingSpectrograms.png" alt="Spectrograms, Human vs Playback" width="600">](images/ComparingSpectrograms.png)
  
-*Figure 17. Spectrograms Comparing EEG Signals Recorded from the Human (left) to the Playback of the Human Signals through the Phantom (right). Color scale shows decibels re: 1 uV.*
+*Figure 18. Spectrograms Comparing EEG Signals Recorded from the Human (left) to the Playback of the Human Signals through the Phantom (right). Color scale shows decibels re: 1 uV.*
 
 [<img src="images/CompareTimeTraces.png" alt="Waveforms, Human vs Playback" width="600">](images/CompareTimeTraces.png)
  
-*Figure 18. Example Waveforms Recorded from the Human (left) and as Played Back through the Phantom (right). Two eye blinks are seen in each recording. The quality of the playback is very good.*
+*Figure 19. Example Waveforms Recorded from the Human (left) and as Played Back through the Phantom (right). Two eye blinks are seen in each recording. The quality of the playback is very good.*
 
 ## 6	SUMMARY AND CONCLUSION
 Through this work, we have developed an EEG head phantom that is intended for evaluating EEG equipment outside of the laboratory. Synthetic or human EEG signals can be played back through this phantom for use in evaluating EEG systems. We demonstrated that the phantom is capable of generating realistic montages of human EEG data. Because the head phantom can produce the same EEG signals repeatedly, unlike a human, we look forward to using this new tool to examine the functionality and quality of various EEG systems.
