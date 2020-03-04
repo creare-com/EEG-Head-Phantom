@@ -144,7 +144,7 @@ When we injected these calibrated drive signals into the phantom, we obtained th
 ## 5	PLAYBACK OF HUMAN EEG DATA
 Since the goal of this EEG head phantom is to play back EEG-like signals in place of a human subject, we sought to demonstrate the playback of EEG data recorded from a human. Our approach for this demonstration was to (1) record EEG signals from a human test subject using a standard research-grade EEG system, (2) place the same EEG system on the phantom and calibrate the phantom for that EEG system, and (3) drive the EEG phantom such that the human’s EEG signals are reproduced on the scalp of the phantom.
 
-### 5.1	Collecting Human Eeg Recordings
+### 5.1	Collecting Human EEG Recordings
 The objective of this test was to acquire representative human EEG recordings. Since one purpose of this phantom is to evaluate EEG systems outside of the laboratory, where electromagnetic interference (EMI) is often a concern, we desired to collect human EEG recordings both with and without purposely added EMI.
 
 The protocol for this human subject research was reviewed and approved by the Dartmouth Committee for the Protection of Human Subjects (CPHS) prior to conducting this study. Our signal volunteer test subject was male, approximately 40 years old, with no known neurological conditions.
@@ -182,7 +182,7 @@ As with our preliminary testing, the first step is to calibrate the phantom for 
  
 *Figure 16. Transfer Function Matrix Measured When Evaluating the Quality of the Calibration Using Calibrated Test Tones.*
 
-### 5.3	Playback Of Human Eeg Data
+### 5.3	Playback Of Human EEG Data
 We prepared the human data for playback by re-montaging the data for a right ear reference (the human data included an electrode at M2, which is very similar to the phantom’s right ear location). We then applied the calibration matrix to obtain the calibrated drive signals and played the drive signals through the phantom while recording the scalp potentials from the EEG system. Looking at Figure 17, we see that the signals recorded by the EEG system are extremely similar to re-montaged signals from the human. An additional comparison of the data is in Figure 18, which shows time-domain traces of a period that includes two eye blinks. As can be seen, the qualitative fidelity of the playback through the phantom is excellent.
  
 [<img src="images/ComparingSpectrograms.png" alt="Spectrograms, Human vs Playback" width="600">](images/ComparingSpectrograms.png)
