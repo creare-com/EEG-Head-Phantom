@@ -147,7 +147,8 @@ Since the goal of this EEG head phantom is to play back EEG-like signals in plac
 ### 5.1	Collecting Human EEG Recordings
 The objective of this test was to acquire representative human EEG recordings. Since one purpose of this phantom is to evaluate EEG systems outside of the laboratory, where electromagnetic interference (EMI) is often a concern, we desired to collect human EEG recordings both with and without purposely added EMI.
 
-[<img src="images/2015-01-30EEGRecordingFromHuman.jpg" alt="Recording EEG" width="400"](images/2015-01-30EEGRecordingFromHuman.jpg)
+[<img src="images/2015-01-30EEGRecordingFromHuman.jpg" alt="Recording EEG" width="400">](images/2015-01-30EEGRecordingFromHuman.jpg)
+
 *Figure 10.  Our human subject volunteered to include this photo in the report.  The coil of wire in the background was used to purposely generate electromagnetic interence, though those recordings are not discussed here.*
 
 The protocol for this human subject research was reviewed and approved by the Dartmouth Committee for the Protection of Human Subjects (CPHS) prior to conducting this study. Our signal volunteer test subject (Figure 10) was male with no known neurological conditions.
