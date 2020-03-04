@@ -8,6 +8,8 @@ Prepared: June 2016.  Released: March 2020.
 
 Document ID: Creare TN-1113
 
+PDF Version is [here](Head%20Phantom%20for%20EEG%20Testing.pdf).
+
 ## 1	ABSTRACT
 Advances in neuroscience are motivating the use of electroencephalography (EEG) outside of the laboratory. There is a need, however, to validate the performance of ambulatory and low-cost EEG systems to ensure that they are suitable for the intended applications. Validation testing on humans is difficult because it is difficult to obtain repeatable signals from human subjects. Instead of using humans, EEG head phantoms can be used to produce repeatable signals by which the EEG systems could be validated. We present a design for a robust EEG head phantom based on conductively-doped plastic that has been injection molded into the shape of a human head. Unlike phantoms based on gelatin or saline, this design is stable and does not become fouled. The phantom is equipped with 34 drive electrodes on the inside of the head, which can be used to generate synthetic signals on the phantom surface or which can be calibrated to play back human EEG recordings. Playback fidelity for synthetic and human signals is demonstrated using an open-source EEG system (OpenBCI).
  
